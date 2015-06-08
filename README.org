@@ -17,7 +17,9 @@ exporter]], sharing the syntax with it.
 
 * Installation
 Put =org-edu-latex.el= somewhere in the =load-path= and =(require
-'org-edu-latex)=.
+'org-edu-latex)=.  Put =org-edu.sty= somewhere LaTeX will find it (the
+simplest possibility is in the same directory (folder) as your
+document).
 
 * Usage
 See [[https://github.com/mbork/org-edu-html][Org-Edu-HTML exporter]].
