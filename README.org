@@ -1,0 +1,23 @@
+#+TITLE: Org-Edu-LaTeX exporter
+#+AUTHOR: Marcin Borkowski (http://mbork.pl)
+
+Tool for generating tests in LaTeX from an Org-mode file.
+
+* Introduction
+This is a tool for generating LaTeX tests from an Org file.  It is
+based on the default Org-mode LaTeX exporter, with provisions for
+a few education-related features.  Currently, the following things are
+supported:
+- single- and multiple-choice tests
+- cloze tests (gap filling)
+- free-form questions
+
+The exporter is heavily based on its twin project, [[https://github.com/mbork/org-edu-html][Org-Edu-HTML
+exporter]], sharing the syntax with it.
+
+* Installation
+Put =org-edu-latex.el= somewhere in the =load-path= and =(require
+'org-edu-latex)=.
+
+* Usage
+See [[https://github.com/mbork/org-edu-html][Org-Edu-HTML exporter]].

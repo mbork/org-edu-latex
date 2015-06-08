@@ -1,0 +1,74 @@
+#+TITLE: A test file for the *Org-edu-HTML* exporter
+#+AUTHOR: Marcin Borkowski
+#+DATE: 2014-10-31
+
+* Examples
+** Single-choice question
+This is a single-choice question:
+#+ATTR_EDU: :test sct
+- [ ] Wrong answer.
+- [ ] Boooo!
+- [X] That's good!
+  #+BEGIN_COMMENT_OK
+  This is a remark for the good answer.  (And a very long one, for
+  that matter.  One that does not fit in a single line of text.
+  Actually, it spans more than one line.  Two lines, to be more
+  precise.)  This remark is not exported.
+  #+END_COMMENT_OK
+  #+BEGIN_COMMENT_WRONG
+  This is a remark in case someone gives a wrong answer.  This remark
+  is also not exported.
+  #+END_COMMENT_WRONG
+- [ ] That's wrong.
+  #+BEGIN_COMMENT_OK
+  This is a remark shown when the student marks the good answer.  Not
+  exported.
+  #+END_COMMENT_OK
+  #+BEGIN_COMMENT_WRONG
+  This is a remark in case someone gives a wrong answer.  Not
+  exported, either.
+  #+END_COMMENT_WRONG
+
+** Multiple-choice question
+A multiple-choice question:
+#+ATTR_EDU: :test mct
+- [ ] Wrong answer.
+  #+BEGIN_COMMENT_OK
+  This is a remark for the good answer.
+  #+END_COMMENT_OK
+  #+BEGIN_COMMENT_WRONG
+  This is a remark in case someone gives a wrong answer.
+  #+END_COMMENT_WRONG
+- [ ] Another wrong answer.
+- [X] Right answer.
+  #+BEGIN_COMMENT_OK
+  This is a remark for the good answer.
+  #+END_COMMENT_OK
+  #+BEGIN_COMMENT_WRONG
+  This is a remark in case someone gives a wrong answer.
+  #+END_COMMENT_WRONG
+- [X] Another right answer.
+
+** Cloze test
+A cloze test:
+#+BEGIN_CLOZE
+A _cloze_ test is a test where the _student|learner_ has to supply
+a missing _word|phrase_.
+#+BEGIN_COMMENT_OK
+This is the comment - not exported.
+#+END_COMMENT_OK
+#+BEGIN_COMMENT_WRONG
+This is the "wrong" comment - not exported, either.
+#+END_COMMENT_WRONG
+#+BEGIN_HIDDEN
+This is a hint for this problem!
+#+END_HIDDEN
+#+END_CLOZE
+** Show the answer
+Now think about this question and press the button when you think you know the answer.
+#+BEGIN_HIDDEN :show Show me the hint! :hide Hide the hint again!
+This is the secret answer.  Hopefully you got it right!
+#+END_HIDDEN
+* COMMENT Config
+#+OPTIONS: toc:nil num:nil teacher:t
+#+LATEX_HEADER_EXTRA: \usepackage{enumitem}

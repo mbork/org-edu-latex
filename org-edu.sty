@@ -1,0 +1,42 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{org-edu}[2015/04/14 A package accompanying the Org-Edu-LaTeX exporter]
+
+\newif\if@teacher
+\DeclareOption{teacher}{\@teachertrue}
+\DeclareOption{student}{\@studenttrue}
+\ProcessOptions
+
+\RequirePackage{enumitem}
+\newcommand{\emptysct}{$\ocircle$}
+\newcommand{\rightsct}{\if@teacher$\circledast$\else\emptysct\fi}
+\newcommand{\wrongsct}{\if@teacher$\ocircle$\else\emptysct\fi}
+\newcommand{\emptymct}{\Square}
+\newcommand{\rightmct}{\if@teacher\XBox\else\emptymct\fi}
+\newcommand{\wrongmct}{\if@teacher\Square\else\emptymct\fi}
+
+\RequirePackage{verbatim}
+
+\let\commentok=\comment    \let\endcommentok=\endcomment
+\let\commentwrong=\comment \let\endcommentwrong=\endcomment
+
+\AtBeginDocument{\raggedbottom}
+
+\newenvironment{cloze}{}{}
+\newcommand{\makegap}[1]{%
+  \setbox\@tempboxa=\hbox{\small #1}%
+  \@tempdima=\wd\@tempboxa
+  \advance\@tempdima by 1cm
+  \vrule height 0pt depth 0.4pt width\@tempdima
+  \if@teacher
+    \nobreak
+    \hskip -\@tempdima
+    \raise 2pt\hbox to\@tempdima{\hfil\box\@tempboxa\hfil}
+  \fi}
+
+\if@teacher
+  \let\hidden=\quotation
+  \let\endhidden=\endquotation
+\else
+  \let\hidden=\comment
+  \let\endhidden=\endcomment
+\fi
