@@ -18,9 +18,9 @@
 		   (:radio-no "RADIO_NO" nil "\\wringsct ")
 		   (:radio-yes "RADIO_YES" nil "\\rightsct "))
   :menu-entry '(?e "Export to Edu-LaTeX"
-		   ((?E "As LaTeX buffer" org-edu-latex-export-as-edu-latex)
-		    (?e "As LaTeX file" org-edu-latex-export-to-edu-latex)
-		    (?o "As LaTeX file and open"
+		   ((?L "As LaTeX buffer" org-edu-latex-export-as-edu-latex)
+		    (?l "As LaTeX file" org-edu-latex-export-to-edu-latex)
+		    (?v "As LaTeX file and open"
 			(lambda (a s v b)
 			  (if a (org-edu-latex-export-to-edu-latex t s v b)
 			    (org-open-file (org-edu-latex-export-to-edu-latex nil s v b))))))))
