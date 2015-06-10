@@ -69,6 +69,6 @@ Now think about this question and press the button when you think you know the a
 #+BEGIN_HIDDEN :show Show me the hint! :hide Hide the hint again!
 This is the secret answer.  Hopefully you got it right!
 #+END_HIDDEN
-* COMMENT Config
+* Config							   :noexport:
 #+OPTIONS: toc:nil num:nil teacher:t
 #+LATEX_HEADER_EXTRA: \usepackage{enumitem}
