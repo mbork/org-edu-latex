@@ -47,7 +47,12 @@ modeled after org-latex-export-as-latex."
 CONTENTS is the transcoded contents string.  INFO is a plist
 holding export options."
   (let ((org-latex-packages-alist
-	 (append org-latex-packages-alist '(("teacher" "org-edu" t)))))
+	 (append org-latex-packages-alist
+		 '(("" "enumitem" nil))
+		 `((,(if (plist-get info :teacher-version)
+			 "teacher"
+		       "")
+		    "org-edu" t)))))
     (org-latex-template contents info)))
 
 (defun org-edu-latex-plain-list (plain-list contents info)

@@ -71,4 +71,3 @@ This is the secret answer.  Hopefully you got it right!
 #+END_HIDDEN
 * Config							   :noexport:
 #+OPTIONS: toc:nil num:nil teacher:t
-#+LATEX_HEADER_EXTRA: \usepackage{enumitem}
